@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<meta charset="ISO-8859-1">
+<title>User Registration</title>
+<style type="text/css">
+label {
+	display: inline-block;
+	width: 200px;
+	margin: 5px;
+	text-align: right;
+}
+button{
+margin:10px;
+padding:10px;
+}
+input[type=text] input[type=password]  select{
+ display: inline-block;
+ width: 200px;
+}
+input[type=checkbox]{
+margin-right: 190px;
+}
+</style>
+</head>
+<body>
+<div class="jumbotron text-center">
+<div class="p-3 mb-2 bg-info text-white">
+  <h1>User Registration</h1>
+<div class="container">
+<div class="row">
+    <div class="col-sm-4">
+<form class ="form-inline" action="#" th:action="@{/update}" th:object="${user}" method="post">
+<div class="input-group">
+<label for="name">Name</label>
+<input class="form-control" type="text" th:field="*{name}" size="80" placeholder="Name"required>
+</div>
+<br/>
+<div class="input-group">
+<label for="email">E-mail</label>
+<input class="form-control" type="email" th:field="*{email}" size="80" placeholder="Email Address"required>
+</div>
+<br/>
+<div class="input-group">
+<label for="password">Password</label>
+<input class="form-control" type="password" th:field="*{password}" size="80" placeholder="Password"required>
+</div>
+<br/>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+<label for="gender">Gender</label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" th:field="*{gender}" value="Male" autocomplete="off">Male
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" th:field="*{gender}" value="Female" autocomplete="off"> Female
+  </label>
+</div>
+<br/>      
+<div class="input-group-btn">
+<button type="submit" class="btn btn-danger">Register</button> <br/>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
